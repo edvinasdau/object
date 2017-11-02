@@ -1,9 +1,14 @@
 <?php
 
+spl_autoload_register(function ($class_name) {
+	include "classes/" . $class_name . ".php";
+});
 
 
-require "classes/Car.php";
-require "classes/ElCar.php";
+// require "classes/TransportInterface.php";
+// require "classes/Car.php";
+// require "classes/ElCar.php";
+
 
 $petro_automobilis = new Car(4,2,950,3.6);
 $jono_automobilis = new ElCar(6,5,2000,5.7);
@@ -19,6 +24,7 @@ var_dump($jono_automobilis);
 // //new value
 // echo $petro_automobilis->doorCount."<br>";
 // //veiksmai
-// $petro_automobilis->go();
+$petro_automobilis->go();
+$jono_automobilis->go();
 // $petro_automobilis->stop();
 // $petro_automobilis->getWeight();

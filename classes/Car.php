@@ -1,6 +1,6 @@
 <?php
  
- class Car {
+ class Car implements TransportInterface {
     // //klases atributai
     // public $wheelCount = 4; //public; private; protected.
     // private $doorCount = 4;
@@ -13,7 +13,7 @@
      public $engineVolume;
  
     //magic method
-    function __construct(int $wheelCount, int $doorCount, int $weight, int $engineVolume) {
+    function __construct(int $wheelCount,int $doorCount,int $weight,int  $engineVolume) {
         $this->wheelCount = $wheelCount;
         $this->doorCount = $doorCount;
         $this->weight = $weight;
@@ -51,6 +51,10 @@
     }
     public function stop(){
         echo "This car is stopped...<br>";
+    }
+
+    public function break(){
+    	echo "This car is broken";
     }
     public function getWeight(){
         echo "Car weight is " . $this->weight;
